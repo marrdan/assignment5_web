@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Character Creator</title>
+   <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main>
+    <h1>Character Creator</h1>
+    <p id="summary" class="message" role="alert" tabindex="-1"></p>
+    <div class="panel">
+      <form id="charForm">
+        <label for="name">Name</label>
+        <input id="name" data-group="name" type="text" required minlength="3" maxlength="15" autocomplete="off" aria-describedby="err-name">
+        <p id="err-name" class="field-error"></p>
+
+        <label for="charClass">Class</label>
+        <select id="charClass" data-group="class" required aria-describedby="err-class">
+          <option value="">Choose a class</option>
+          <option value="mage">Mage</option>
+          <option value="warrior">Warrior</option>
+          <option value="rogue">Rogue</option>
+        </select>
+        <p id="err-class" class="field-error"></p>
+
+        <label for="color">Color</label>
+        <select id="color" data-group="color" required aria-describedby="err-color">
+          <option value="">Choose a color</option>
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="purple">Purple</option>
+        </select>
+        <p id="err-color" class="field-error"></p>
+
+        <fieldset aria-describedby="err-skills">
+          <legend>Skills (1 to 10, exactly 20 points in total)</legend>
+          <label for="strength">Strength</label>
+          <input id="strength" data-group="skills" type="number" min="1" max="10" value="5" required>
+          <label for="magic">Magic</label>
+          <input id="magic" data-group="skills" type="number" min="1" max="10" value="5" required>
+          <label for="agility">Agility</label>
+          <input id="agility" data-group="skills" type="number" min="1" max="10" value="5" required>
+          <label for="luck">Luck</label>
+          <input id="luck" data-group="skills" type="number" min="1" max="10" value="5" required>
+          <p>Points left: <span id="pointsLeft"></span></p>
+          <p id="err-skills" class="field-error"></p>
+        </fieldset>
+
+        <button type="submit">Create character</button>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h2>Preview</h2>
+      <div id="preview" class="card"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Created characters</h2>
+      <p id="emptyResult" class="empty">No characters yet.</p>
+      <div id="result" class="cards"></div>
+    </div>
+  </main>
+  <script src="character.js" defer></script>
+</body>
+</html>

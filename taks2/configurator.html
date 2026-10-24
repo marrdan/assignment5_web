@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bathroom Configurator</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main>
+    <h1>Bathroom Configurator</h1>
+    <div class="panel">
+      <p>Choose one sink, one faucet and one pipe set.</p>
+      <label for="budget">Your budget ($)</label>
+      <input id="budget" type="number" min="0" value="300">
+      <label for="search">Search by name</label>
+      <input id="search" type="text" autocomplete="off">
+    </div>
+    <div id="items" class="cards"></div>
+    <div class="panel">
+      <p id="total"></p>
+      <p id="message" class="message" role="status"></p>
+      <button type="button" id="saveBtn">Save build</button>
+      <button type="button" id="clearBtn">Clear saved</button>
+      <h2>Saved builds (max 3)</h2>
+      <ul id="saved"></ul>
+    </div>
+  </main>
+  <script src="configurator.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Breaker</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main>
+    <h1>Code Breaker</h1>
+    <div class="panel">
+      <p>Guess the secret 4-digit code. The digits do not repeat.</p>
+      <form id="guessForm">
+        <label for="guess">Your guess</label>
+        <input id="guess" type="text" maxlength="4" inputmode="numeric" autocomplete="off">
+        <button type="submit" id="guessBtn">Guess</button>
+        <button type="button" id="restartBtn">New game</button>
+      </form>
+      <p id="attempts"></p>
+      <p id="message" class="message" role="status"></p>
+    </div>
+    <div class="panel">
+      <h2>Your guesses</h2>
+      <ul id="history"></ul>
+    </div>
+  </main>
+  <script src="game.js" defer></script>
+</body>
+</html>
